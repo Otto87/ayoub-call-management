@@ -4,18 +4,17 @@ import java.time.LocalDate;
 import java.time.Duration;
 
 public abstract class Call {
-	private int phoneNumber;
+	private String phoneNumber;
 	private LocalDate callDate;
 	private Duration callDuration;
 	private Contact contact;
 	// Constructors
 
-	public Call(int phoneNumber) {
+	public Call(String phoneNumber, LocalDate callDate, Duration callDuration, Contact contact) {
 		this.phoneNumber = phoneNumber;
-	}
-
-	public Call() {
-
+		this.callDate = callDate;
+		this.callDuration = callDuration;
+		this.contact = contact;
 	}
 
 	public int setDurationToMinutes() {
@@ -24,7 +23,7 @@ public abstract class Call {
 
 	// Getters
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
@@ -42,7 +41,7 @@ public abstract class Call {
 
 	// Setters
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
